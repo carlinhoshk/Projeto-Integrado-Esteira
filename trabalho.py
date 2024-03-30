@@ -11,22 +11,23 @@ def progresso():
         sleep(0.01)
 
 def balança():
-    global pesominimo 
-    novopesominimo = float(input("Insira o novo peso mínimo desejado em gramas: "))
-    pesominimo = novopesominimo
-    return pesominimo
+    global peso_minimo 
+    novo_peso_minimo = float(input("Insira o novo peso mínimo desejado em gramas: "))
+    peso_minimo = novo_peso_minimo
+    return peso_minimo
 
 
+## Tirando codigo desnessesario, removendo funcao .lower e adicionando input em maisculo 
 def continuar():
     while True:
         print ('Limpe o terminal...')
-        resposta = input("Pressione 'C' para continuar, 'S' para sair ou 'B' para configurar a balança ").lower()
-        if resposta == 'c':
+        resposta = input("Pressione 'C' para continuar, 'S' para sair ou 'B' para configurar a balança ")
+        if resposta == 'C':
             break
-        elif resposta =='s':
+        elif resposta =='S':
             print ("Encerrando sistema...")
             exit()
-        elif resposta == 'b':
+        elif resposta == 'B':
             balança()
         else:
             print("Opção inválida, tente novamente!")
@@ -38,7 +39,9 @@ loteai = 0
 lotebp = 0
 lotebi = 0
 lotec = 0
-pesominimo = float(100)
+
+## adotando padrao de snake_case
+peso_minimo = float(100)
 
 L = ['A', 'B']
 
@@ -111,7 +114,7 @@ while True:
     
     print("    A CAMINHO DO LOTE >>>>    ")
     progresso()
-    if peso > pesominimo:
+    if peso > peso_minimo:
         if lote == 'A' and tipo == '2':
             loteap += 1
         elif lote == 'A' and tipo == '1':
